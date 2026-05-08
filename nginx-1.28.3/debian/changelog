@@ -1,3 +1,9 @@
+nginx (1.28.3-2+ubuntu24.04.1+deb.meiners.net+2) noble; urgency=medium
+
+  * New upstream version 1.28.3.
+
+ -- David Meiners <david@meiners.net>  Wed, 06 May 2026 18:46:51 +0000
+
 nginx (1.28.3-2ubuntu1) resolute; urgency=low
 
   * Merge from Debian unstable. Remaining changes:
