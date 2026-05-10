@@ -1,0 +1,3 @@
+nginx-fix-pidfile.patch
+nginx-ssl_cert_cb_yield.patch
+override-uname.patch
