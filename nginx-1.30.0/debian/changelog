@@ -1,4 +1,4 @@
-nginx (1.30.0-2+deb.dmeiners.net+2) noble; urgency=medium
+nginx (1.30.0-2+ubuntu24.04.1+deb.dmeiners.net) noble; urgency=medium
 
   * update to 1.30.0
 
