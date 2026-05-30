@@ -2,3 +2,4 @@ nginx-fix-pidfile.patch
 nginx-ssl_cert_cb_yield.patch
 override-uname.patch
 backport-request_port_and_is_request_port.patch
+cve-2026-42945.patch

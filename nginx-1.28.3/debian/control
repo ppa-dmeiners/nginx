@@ -1,6 +1,7 @@
 Source: nginx
 Section: httpd
-Maintainer: Debian Nginx Maintainers <pkg-nginx-maintainers@alioth-lists.debian.net>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Nginx Maintainers <pkg-nginx-maintainers@alioth-lists.debian.net>
 Uploaders: Jan Mojžíš <janmojzis@debian.org>
 Build-Depends: debhelper-compat (= 13),
                libexpat-dev,

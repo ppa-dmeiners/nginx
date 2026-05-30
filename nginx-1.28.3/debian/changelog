@@ -1,8 +1,18 @@
-nginx (1.28.3-2+ubuntu24.04.1+deb.meiners.net+2) noble; urgency=medium
+nginx (1.28.3-2+ubuntu24.04.1+deb.meiners.net+4) noble; urgency=medium
 
-  * New upstream version 1.28.3.
+  * New upstream version
 
- -- David Meiners <david@meiners.net>  Wed, 06 May 2026 18:46:51 +0000
+ -- David Meiners <david@meiners.net>  Sat, 30 May 2026 15:11:47 +0000
+
+nginx (1.28.3-2ubuntu1.1) resolute-security; urgency=medium
+
+  * SECURITY UPDATE: buffer overrun in ngx_http_rewrite_module
+    (LP: #2152577)
+    - d/patches/cve-2026-42945.patch: Apply upstream commit/fix
+      for CVE
+    - CVE-2026-42945
+
+ -- Thomas Ward <teward@ubuntu.com>  Wed, 13 May 2026 17:01:19 -0400
 
 nginx (1.28.3-2ubuntu1) resolute; urgency=low
 
