@@ -1,3 +1,9 @@
+nginx (1.30.3-1+ubuntu26.04.1+deb.dmeiners.net) resolute; urgency=medium
+
+  * New upstream version 1.30.3
+
+ -- David Meiners <david@meiners.net>  Sat, 20 Jun 2026 16:58:49 +0000
+
 nginx (1.30.2-1+ubuntu26.04.1+deb.dmeiners.net) resolute; urgency=medium
 
   * New upstream version 1.30.2
