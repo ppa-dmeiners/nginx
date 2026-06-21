@@ -3,3 +3,10 @@ nginx-ssl_cert_cb_yield.patch
 override-uname.patch
 backport-request_port_and_is_request_port.patch
 cve-2026-42945.patch
+CVE-2026-40460.patch
+CVE-2026-40701.patch
+CVE-2026-42934.patch
+CVE-2026-42946-1.patch
+CVE-2026-42946-2.patch
+CVE-2026-9256.patch
+CVE-2026-49975.patch

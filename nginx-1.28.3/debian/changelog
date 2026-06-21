@@ -1,8 +1,69 @@
-nginx (1.28.3-2+ubuntu24.04.1+deb.meiners.net+4) noble; urgency=medium
+nginx (1.28.3-2+ubuntu24.04.1+deb.meiners.net+5) noble; urgency=medium
 
   * New upstream version
 
- -- David Meiners <david@meiners.net>  Sat, 30 May 2026 15:11:47 +0000
+ -- David Meiners <david@meiners.net>  Sun, 21 Jun 2026 03:48:34 +0000
+
+nginx (1.28.3-2ubuntu1.5) resolute-security; urgency=medium
+
+  * SECURITY UPDATE: HTTP/2 Bomb denial of service
+    - debian/patches/CVE-2026-49975.patch: updated to patch from Debian's
+      1.26.3-3+deb13u6 package which was modified to not break ABI by
+      storing the information in a new ngx_http_header_count_module module.
+      Thanks to Miao Wang and Jan Mojžíš for the modified patch!
+    - CVE-2026-49975
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 10 Jun 2026 16:06:43 -0400
+
+nginx (1.28.3-2ubuntu1.4) resolute-security; urgency=medium
+
+  * SECURITY REGRESSION: ABI change breaking external modules (LP: #2155992)
+    - debian/patches/CVE-2026-49975.patch: disable for now, pending further
+      investigation.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 09 Jun 2026 07:43:21 -0400
+
+nginx (1.28.3-2ubuntu1.3) resolute-security; urgency=medium
+
+  * SECURITY UPDATE: HTTP/2 Bomb denial of service
+    - debian/patches/CVE-2026-49975.patch: Added max_headers directive. in
+      src/http/ngx_http_core_module.c, src/http/ngx_http_core_module.h,
+      src/http/ngx_http_request.c, src/http/ngx_http_request.h,
+      src/http/v2/ngx_http_v2.c, src/http/v3/ngx_http_v3_request.c.
+    - CVE-2026-49975
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 05 Jun 2026 07:24:46 -0400
+
+nginx (1.28.3-2ubuntu1.2) resolute-security; urgency=medium
+
+  * SECURITY UPDATE: HTTP/3 address spoofing
+    - debian/patches/CVE-2026-40460.patch: QUIC: avoid assigning unvalidated
+      address to new streams in src/event/quic/ngx_event_quic_migration.c.
+    - CVE-2026-40460
+  * SECURITY UPDATE: resolver use-after-free in OCSP
+    - debian/patches/CVE-2026-40701.patch: OCSP: resolve cleanup on connection
+      close in src/event/ngx_event_openssl_stapling.c.
+    - CVE-2026-40701
+  * SECURITY UPDATE: Buffer overread in the ngx_http_charset_module
+    - debian/patches/CVE-2026-42934.patch: Charset: fix buffer over-read in
+      recode_from_utf8(). in src/http/modules/ngx_http_charset_filter_module.c.
+    - CVE-2026-42934
+  * SECURITY UPDATE: Buffer overread in the ngx_http_scgi_module and
+    ngx_http_uwsgi_module
+    - debian/patches/CVE-2026-42946-1.patch: Upstream: reset parsing state after
+      invalid status line in src/http/modules/ngx_http_scgi_module.c,
+      src/http/modules/ngx_http_uwsgi_module.c.
+    - debian/patches/CVE-2026-42946-2.patch: Upstream: fixed parsing of split
+      status lines in src/http/modules/ngx_http_proxy_module.c,
+      src/http/modules/ngx_http_scgi_module.c,
+      src/http/modules/ngx_http_uwsgi_module.c.
+    - CVE-2026-42946
+  * SECURITY UPDATE: Buffer overflow in the ngx_http_rewrite_module
+    - debian/patches/CVE-2026-9256.patch: Rewrite: fix buffer overflow with
+      overlapping captures in src/http/ngx_http_script.c.
+    - CVE-2026-9256
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Sat, 30 May 2026 10:26:32 -0400
 
 nginx (1.28.3-2ubuntu1.1) resolute-security; urgency=medium
 
