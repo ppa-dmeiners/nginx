@@ -1,3 +1,9 @@
+nginx (1.30.4-1+ubuntu24.04.1+deb.meiners.net) noble; urgency=medium
+
+  * New upstream version 1.30.4
+
+ -- David Meiners <david@meiners.net>  Thu, 16 Jul 2026 17:00:35 +0000
+
 nginx (1.30.3-1+ubuntu24.04.1+deb.dmeiners.net) noble; urgency=medium
 
   * New upstream version 1.30.3
