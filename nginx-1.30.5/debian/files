@@ -1,0 +1,24 @@
+libnginx-mod-http-geoip-dbgsym_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.ddeb debug optional automatic=yes
+libnginx-mod-http-geoip_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.deb httpd -
+libnginx-mod-http-image-filter-dbgsym_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.ddeb debug optional automatic=yes
+libnginx-mod-http-image-filter_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.deb httpd -
+libnginx-mod-http-perl-dbgsym_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.ddeb debug optional automatic=yes
+libnginx-mod-http-perl_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.deb httpd -
+libnginx-mod-http-xslt-filter-dbgsym_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.ddeb debug optional automatic=yes
+libnginx-mod-http-xslt-filter_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.deb httpd -
+libnginx-mod-mail-dbgsym_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.ddeb debug optional automatic=yes
+libnginx-mod-mail_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.deb httpd -
+libnginx-mod-stream-dbgsym_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.ddeb debug optional automatic=yes
+libnginx-mod-stream-geoip-dbgsym_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.ddeb debug optional automatic=yes
+libnginx-mod-stream-geoip_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.deb httpd -
+libnginx-mod-stream_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.deb httpd -
+nginx-common_1.30.5-1+ubuntu24.04.1+deb.meiners.net_all.deb httpd -
+nginx-core_1.30.5-1+ubuntu24.04.1+deb.meiners.net_all.deb httpd -
+nginx-dbgsym_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.ddeb debug optional automatic=yes
+nginx-dev_1.30.5-1+ubuntu24.04.1+deb.meiners.net_all.deb httpd -
+nginx-doc_1.30.5-1+ubuntu24.04.1+deb.meiners.net_all.deb doc -
+nginx-extras_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.deb httpd -
+nginx-full_1.30.5-1+ubuntu24.04.1+deb.meiners.net_all.deb httpd -
+nginx-light_1.30.5-1+ubuntu24.04.1+deb.meiners.net_all.deb httpd -
+nginx_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.buildinfo httpd -
+nginx_1.30.5-1+ubuntu24.04.1+deb.meiners.net_amd64.deb httpd -
