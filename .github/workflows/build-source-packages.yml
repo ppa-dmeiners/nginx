@@ -1,0 +1,52 @@
+name: Build Ubuntu source packages
+
+on:
+  push:
+    branches:
+      - stable-noble
+      - stable-resolute
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build ${{ matrix.codename }} source package
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        codename:
+          - noble
+          - resolute
+    steps:
+      - name: Check out stable-${{ matrix.codename }}
+        uses: actions/checkout@v4
+        with:
+          ref: stable-${{ matrix.codename }}
+
+      - name: Install source packaging tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y devscripts
+
+      - name: Build source package
+        run: |
+          test "$(dpkg --print-architecture)" = amd64
+          source_dir="$(find . -mindepth 3 -maxdepth 3 -type f -path '*/debian/changelog' -print -quit | cut -d/ -f2)"
+          test -n "$source_dir"
+          cd "$source_dir"
+          debuild -S -us -uc -d
+
+      - name: Upload source package
+        uses: actions/upload-artifact@v4
+        with:
+          name: nginx-source-${{ matrix.codename }}-amd64
+          if-no-files-found: error
+          path: |
+            nginx_*.dsc
+            nginx_*.debian.tar.*
+            nginx_*.orig.tar.*
+            nginx_*.changes
+            nginx_*.buildinfo
