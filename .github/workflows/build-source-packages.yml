@@ -1,4 +1,4 @@
-name: Build Ubuntu source packages
+name: Build Ubuntu packages
 
 on:
   push:
@@ -12,19 +12,14 @@ permissions:
 
 jobs:
   build:
-    name: Build ${{ matrix.codename }} source package
+    name: Build ${{ github.ref_name }} packages
+    if: github.ref_name == 'stable-noble' || github.ref_name == 'stable-resolute'
     runs-on: ubuntu-24.04
-    strategy:
-      fail-fast: false
-      matrix:
-        codename:
-          - noble
-          - resolute
     steps:
-      - name: Check out stable-${{ matrix.codename }}
+      - name: Check out triggering branch
         uses: actions/checkout@v7
         with:
-          ref: stable-${{ matrix.codename }}
+          ref: ${{ github.ref_name }}
 
       - name: Install source packaging tools
         run: |
@@ -55,11 +50,28 @@ jobs:
       - name: Upload source package
         uses: actions/upload-artifact@v7
         with:
-          name: nginx-source-${{ matrix.codename }}-amd64
+          name: nginx-source-${{ github.ref_name == 'stable-noble' && 'noble' || 'resolute' }}-amd64
           if-no-files-found: error
           path: |
             nginx_*.dsc
             nginx_*.debian.tar.*
             nginx_*.orig.tar.*
-            nginx_*.changes
-            nginx_*.buildinfo
+            nginx_*_source.changes
+            nginx_*_source.buildinfo
+
+      - name: Build binary packages
+        run: |
+          source_dir="$(find . -mindepth 3 -maxdepth 3 -type f -path '*/debian/changelog' -print -quit | cut -d/ -f2)"
+          test -n "$source_dir"
+          cd "$source_dir"
+          debuild -b -us -uc
+
+      - name: Upload binary packages
+        uses: actions/upload-artifact@v7
+        with:
+          name: nginx-binary-${{ github.ref_name == 'stable-noble' && 'noble' || 'resolute' }}-amd64
+          if-no-files-found: error
+          path: |
+            nginx_*.deb
+            nginx_*_amd64.changes
+            nginx_*_amd64.buildinfo
