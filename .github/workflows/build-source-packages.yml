@@ -72,6 +72,7 @@ jobs:
           name: nginx-binary-${{ github.ref_name == 'stable-noble' && 'noble' || 'resolute' }}-amd64
           if-no-files-found: error
           path: |
-            nginx_*.deb
+            nginx*.deb
+            libnginx*.deb
             nginx_*_amd64.changes
             nginx_*_amd64.buildinfo
