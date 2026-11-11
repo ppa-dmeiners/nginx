@@ -22,7 +22,7 @@ jobs:
           - resolute
     steps:
       - name: Check out stable-${{ matrix.codename }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: stable-${{ matrix.codename }}
 
@@ -53,7 +53,7 @@ jobs:
           debuild -S -us -uc
 
       - name: Upload source package
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: nginx-source-${{ matrix.codename }}-amd64
           if-no-files-found: error
