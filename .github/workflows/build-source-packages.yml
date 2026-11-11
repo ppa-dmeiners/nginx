@@ -29,7 +29,19 @@ jobs:
       - name: Install source packaging tools
         run: |
           sudo apt-get update
-          sudo apt-get install --no-install-recommends -y devscripts
+          sudo apt-get install --no-install-recommends -y \
+            debhelper-compat \
+            devscripts \
+            fakeroot \
+            libexpat-dev \
+            libgd-dev \
+            libgeoip-dev \
+            libpcre2-dev \
+            libperl-dev \
+            libssl-dev \
+            libxslt1-dev \
+            po-debconf \
+            zlib1g-dev
 
       - name: Build source package
         run: |
@@ -37,7 +49,7 @@ jobs:
           source_dir="$(find . -mindepth 3 -maxdepth 3 -type f -path '*/debian/changelog' -print -quit | cut -d/ -f2)"
           test -n "$source_dir"
           cd "$source_dir"
-          debuild -S -us -uc -d
+          debuild -S -us -uc
 
       - name: Upload source package
         uses: actions/upload-artifact@v4
